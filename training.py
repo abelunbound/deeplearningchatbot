@@ -57,7 +57,7 @@ classes = sorted(set(classes))
 
 # What are pickle files?
 pickle.dump(words, open('words.pkl', 'wb'))
-pickle.dump(words, open('classes.pkl', 'wb'))
+pickle.dump(classes, open('classes.pkl', 'wb'))
 
 # Machine Learning part
 
@@ -114,10 +114,10 @@ sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
 #Fit the model. Epoch is the number of times we want to feed the data into the model
-model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
+hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
 
 #Save model
-model.save('chatbotmodel_model.model')
+model.save('chatbotmodel.h5', hist)
 
 print('Done with Training')
 
