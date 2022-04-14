@@ -1,5 +1,5 @@
 {"intents": [
-  {"tag":"deadline",
+  { "tag":"deadline",
     "patterns":["What’s the application deadline?","When will the application end?","When is the latest I can apply for my course?","I want to apply for the September batch, how much time do I still have left?", "When is the application due?"],
     "responses":["You can apply anytime prior to the course start date", "We recommend submitting your application sooner rather than later to allow time for processing.", "July 2022"]
   }
