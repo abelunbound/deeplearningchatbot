@@ -8,7 +8,7 @@ from nltk.stem import WordNetLemmatizer
 
 from tensorflow.keras.models import load_model
 
-lemmatizer = WordNetLemmatizer
+lemmatizer = WordNetLemmatizer()
 #I got an error here,TypeError(f'the JSON object must be str, bytes or bytearray,
 # First solution was to use json.dump but it didn't work so the advise was to use
 # json.dumps with an 's' as I learnt that json.dump requires a file to dump into
@@ -66,7 +66,7 @@ def get_response(intent_list, intents_json):
 print('Yes! Our ChatBot, Mrs. Elizibeth is now running!')
 
 while True:
-    message = input('')
+    message = input('User:' + ' ')
     ints = predict_class(message)
     res = get_response(ints,intents)
-    print(res)
+    print('Lizzy:', res)
